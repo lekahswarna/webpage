@@ -32,6 +32,7 @@
         .page-container {
             display: flex;
             align-items: center;
+            flex-direction: column; /* Changed to column layout */
             width: 800px; /* Adjusted width to accommodate all elements */
             margin: 20px auto; /* Add margin to the page container */
             background-color: blue; /* Set blue background color for the container */
@@ -43,6 +44,7 @@
             width: 300px;
             overflow: hidden;
             position: relative;
+            margin-bottom: 20px; /* Add margin bottom for spacing */
         }
 
         .carousel {
@@ -86,18 +88,18 @@
     </div>
     <div class="header-line"></div>
 
-    <div class="page-container">
-        <!-- Left Carousel -->
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item">
-                      <img src="certificate.png" alt="Image 1">
-                </div>
+    <!-- Left Carousel -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                  <img src="certificate.png" alt="Image 1">
             </div>
-            <button class="carousel-button" id="prevBtn1">Previous</button>
-            <button class="carousel-button" id="nextBtn1">Next</button>
         </div>
+        <button class="carousel-button" id="prevBtn1">Previous</button>
+        <button class="carousel-button" id="nextBtn1">Next</button>
+    </div>
 
+    <div class="page-container">
         <!-- Picture -->
         <img class="carousel-image" src="Akilaa.png" alt="Additional Image">
 
@@ -187,25 +189,5 @@
 
         // Event listener for next button of right carousel
         nextBtn2.addEventListener('click', () => {
-            if (currentIndex2 < totalItems2 - 1) {
-                currentIndex2++;
-                updateCarousel2();
-            }
-        });
+            if (currentIndex2 < totalItems2 -
 
-        // JavaScript for playing audio
-        const audioButton = document.getElementById('audioButton');
-        const audio = document.getElementById('audio');
-
-        audioButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                audioButton.textContent = 'Pause Audio';
-            } else {
-                audio.pause();
-                audioButton.textContent = 'Play Audio';
-            }
-        });
-    </script>
-</body>
-</html>
