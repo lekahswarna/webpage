@@ -90,10 +90,7 @@
     <div class="header-line"></div>
 
     <div class="page-container">
-        <!-- Picture -->
-        <img class="carousel-image" src="Akilaa.png" alt="Additional Image">
-
-        <!-- Right Carousel 1 -->
+        <!-- Left Carousel -->
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
@@ -106,35 +103,26 @@
                     <a href="https://www.linkedin.com/in/swarna-ganesan/">
                         <img src="door.png" alt="Image 4">
                     </a>
-                    <h3>LinkedIn</h3>
+                    <h3>Linkden</h3>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://linktr.ee/Swarna_Ganesan">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Links to everywhere</h3>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://forms.gle/CoqQQtunvst6RLDv7">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Contact me</h3>
                 </div>
             </div>
             <button class="carousel-button" id="prevBtn2">Previous</button>
             <button class="carousel-button" id="nextBtn2">Next</button>
         </div>
 
-        <!-- Right Carousel 2 -->
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item">
-                    <a href="https://github.com/lekahswarna/">
-                        <img src="door.png" alt="Image 4">
-                    </a>
-                    <h3>Github</h3>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.linkedin.com/in/swarna-ganesan/">
-                        <img src="door.png" alt="Image 4">
-                    </a>
-                    <h3>LinkedIn</h3>
-                </div>
-            </div>
-            <button class="carousel-button" id="prevBtn2">Previous</button>
-            <button class="carousel-button" id="nextBtn2">Next</button>
-        </div>
-        
-
-        <!-- Bottom Carousel -->
+        <!-- Right Carousel -->
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
@@ -146,20 +134,59 @@
         </div>
     </div>
 
+    <!-- Picture Carousel -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                  <img src="Akilaa.png" alt="Additional Image">
+            </div>
+        </div>
+        <button class="carousel-button" id="prevBtn3">Previous</button>
+        <button class="carousel-button" id="nextBtn3">Next</button>
+    </div>
+
     <script>
-        // JavaScript for the right carousel 1
-        const carousel2 = document.querySelector('.carousel-container:nth-child(2) .carousel');
+        // JavaScript for the left carousel (Carousel 1)
+        const carousel1 = document.querySelector('.carousel-container:first-of-type .carousel');
+        const prevBtn1 = document.getElementById('prevBtn1');
+        const nextBtn1 = document.getElementById('nextBtn1');
+        let currentIndex1 = 0;
+        const totalItems1 = document.querySelectorAll('.carousel-container:first-of-type .carousel-item').length;
+
+        // Function to update the left carousel display
+        function updateCarousel1() {
+            carousel1.style.transform = `translateX(-${currentIndex1 * 100}%)`;
+        }
+
+        // Event listener for previous button of left carousel
+        prevBtn1.addEventListener('click', () => {
+            if (currentIndex1 > 0) {
+                currentIndex1--;
+                updateCarousel1();
+            }
+        });
+
+        // Event listener for next button of left carousel
+        nextBtn1.addEventListener('click', () => {
+            if (currentIndex1 < totalItems1 - 1) {
+                currentIndex1++;
+                updateCarousel1();
+            }
+        });
+
+        // JavaScript for the right carousel (Carousel 2)
+        const carousel2 = document.querySelector('.carousel-container:last-of-type .carousel');
         const prevBtn2 = document.getElementById('prevBtn2');
         const nextBtn2 = document.getElementById('nextBtn2');
         let currentIndex2 = 0;
-        const totalItems2 = document.querySelectorAll('.carousel-container:nth-child(2) .carousel-item').length;
+        const totalItems2 = document.querySelectorAll('.carousel-container:last-of-type .carousel-item').length;
 
-        // Function to update the right carousel display 1
+        // Function to update the right carousel display
         function updateCarousel2() {
             carousel2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
         }
 
-        // Event listener for previous button of right carousel 1
+        // Event listener for previous button of right carousel
         prevBtn2.addEventListener('click', () => {
             if (currentIndex2 > 0) {
                 currentIndex2--;
@@ -167,7 +194,7 @@
             }
         });
 
-        // Event listener for next button of right carousel 1
+        // Event listener for next button of right carousel
         nextBtn2.addEventListener('click', () => {
             if (currentIndex2 < totalItems2 - 1) {
                 currentIndex2++;
@@ -175,19 +202,19 @@
             }
         });
 
-        // JavaScript for the right carousel 2
-        const carousel3 = document.querySelector('.carousel-container:nth-child(3) .carousel');
+        // JavaScript for the picture carousel (Carousel 3)
+        const carousel3 = document.querySelector('.carousel-container:nth-of-type(3) .carousel');
         const prevBtn3 = document.getElementById('prevBtn3');
         const nextBtn3 = document.getElementById('nextBtn3');
         let currentIndex3 = 0;
-        const totalItems3 = document.querySelectorAll('.carousel-container:nth-child(3) .carousel-item').length;
+        const totalItems3 = document.querySelectorAll('.carousel-container:nth-of-type(3) .carousel-item').length;
 
-        // Function to update the right carousel display 2
+        // Function to update the picture carousel display
         function updateCarousel3() {
             carousel3.style.transform = `translateX(-${currentIndex3 * 100}%)`;
         }
 
-        // Event listener for previous button of right carousel 2
+        // Event listener for previous button of picture carousel
         prevBtn3.addEventListener('click', () => {
             if (currentIndex3 > 0) {
                 currentIndex3--;
@@ -195,7 +222,7 @@
             }
         });
 
-        // Event listener for next button of right carousel 2
+        // Event listener for next button of picture carousel
         nextBtn3.addEventListener('click', () => {
             if (currentIndex3 < totalItems3 - 1) {
                 currentIndex3++;
