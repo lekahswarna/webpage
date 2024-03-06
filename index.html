@@ -1,3 +1,4 @@
+User
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +33,6 @@
         .page-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center items horizontally */
-            flex-wrap: wrap; /* Allow items to wrap */
             width: 800px; /* Adjusted width to accommodate all elements */
             margin: 20px auto; /* Add margin to the page container */
             background-color: blue; /* Set blue background color for the container */
@@ -45,7 +44,6 @@
             width: 300px;
             overflow: hidden;
             position: relative;
-            margin: 10px; /* Add margin between carousels */
         }
 
         .carousel {
@@ -62,6 +60,11 @@
             padding: 10px;
             background-color: #333;
             color: white;
+        }
+
+        .carousel-image {
+            width: 200px;
+            margin-left: 20px;
         }
 
         /* Style the audio button */
@@ -130,24 +133,9 @@
             <button class="carousel-button" id="prevBtn2">Previous</button>
             <button class="carousel-button" id="nextBtn2">Next</button>
         </div>
-        
-        <!-- Second Carousel Below -->
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item">
-                    <a href="#">
-                        <img src="door.png" alt="Door Image">
-                    </a>
-                    <h3>Door Carousel</h3>
-                </div>
-                <!-- Add more carousel items as needed -->
-            </div>
-            <button class="carousel-button" id="prevBtn3">Previous</button>
-            <button class="carousel-button" id="nextBtn3">Next</button>
-        </div>
     </div>
     <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
+<script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
 
     <script>
         // JavaScript for the left carousel (Carousel 1)
@@ -179,11 +167,11 @@
         });
 
         // JavaScript for the right carousel (Carousel 2)
-        const carousel2 = document.querySelector('.carousel-container:nth-of-type(2) .carousel');
+        const carousel2 = document.querySelector('.carousel-container:last-of-type .carousel');
         const prevBtn2 = document.getElementById('prevBtn2');
         const nextBtn2 = document.getElementById('nextBtn2');
         let currentIndex2 = 0;
-        const totalItems2 = document.querySelectorAll('.carousel-container:nth-of-type(2) .carousel-item').length;
+        const totalItems2 = document.querySelectorAll('.carousel-container:last-of-type .carousel-item').length;
 
         // Function to update the right carousel display
         function updateCarousel2() {
@@ -221,4 +209,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
