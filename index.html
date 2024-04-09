@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ganesan</title>
     <style>
-        /* Add your CSS styles here */
+        /* CSS styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: red; /* Set red background color */
+            background-color: red; /* Red background color */
             margin: 0; /* Remove default margin */
         }
 
         .header {
-            background-color: gold; /* Header background color (gold) */
-            color: white; /* Header text color (white) */
+            background-color: gold; /* Gold header background color */
+            color: white; /* White header text color */
             text-align: center;
-            padding: 20px 0; /* Add padding to the header */
+            padding: 20px 0; /* Header padding */
         }
 
         .header h1 {
@@ -33,11 +33,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 800px; /* Adjusted width to accommodate all elements */
-            margin: 20px auto; /* Add margin to the page container */
-            background-color: blue; /* Set blue background color for the container */
-            padding: 20px; /* Add padding to the container */
-            border: 1px solid #ccc; /* Add border for a cleaner look */
+            width: 800px; /* Width of the page container */
+            margin: 20px auto; /* Margin around the page container */
+            background-color: blue; /* Blue background color for the container */
+            padding: 20px; /* Padding for the container */
+            border: 1px solid #ccc; /* Border for the container */
         }
 
         .carousel-container {
@@ -48,7 +48,7 @@
         }
 
         .carousel-container .carousel-wrapper {
-            width: 300px;
+            width: 500px; /* Width of the carousel wrapper */
             overflow: hidden;
             position: relative;
         }
@@ -56,10 +56,11 @@
         .carousel {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: auto; /* Width of the carousel */
         }
 
         .carousel-item {
-            min-width: 100%;
+            min-width: 100%; /* Minimum width of carousel item */
         }
 
         .carousel-button {
@@ -84,20 +85,20 @@
             cursor: pointer;
         }
 
-        /* New container for large PPT presentation */
+        /* Container for large PPT presentation */
         .ppt-container {
             width: 100%;
-            max-width: 800px;
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: white;
+            max-width: 800px; /* Maximum width of the container */
+            margin-top: 20px; /* Margin on top of the container */
+            border: 1px solid #ccc; /* Border for the container */
+            padding: 20px; /* Padding for the container */
+            background-color: white; /* White background color for the container */
         }
 
         .ppt-container iframe {
             width: 100%;
-            height: 600px; /* Adjust the height as needed */
-            border: none;
+            height: 600px; /* Height of the iframe */
+            border: none; /* Remove border from iframe */
         }
     </style>
 </head>
@@ -105,7 +106,7 @@
     <div class="header">
         <h1>Ganesan, Swarna</h1>
         <h2 style="color: white;">be the sun you have to burn like the sun</h2>
-        <!-- Add the audio button and audio element -->
+        <!-- Audio button and audio element -->
         <button class="audio-button" id="audioButton">Play Audio</button>
         <audio id="audio" src="my_audio.mp4"></audio>
     </div>
@@ -167,34 +168,32 @@
         <!-- Picture -->
         <img class="carousel-image" src="Akilaa.png" alt="Additional Image">
 
-        <!-- New container for large PPT presentation -->
+        <!-- Container for large PPT presentation -->
         <div class="ppt-container">
-            <!-- Embed your PPT presentation here using iframe or any suitable method -->
+            <!-- Embedding PPT presentation -->
             <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFuO2iPJ_M&#x2F;QPIG4cPl8RzsTctoTo2p_g&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFuO2iPJ_M&#x2F;QPIG4cPl8RzsTctoTo2p_g&#x2F;view?utm_content=DAFuO2iPJ_M&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">CELL</a> by Swarna Lekah
+                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+                border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https://www.canva.com/design/DAFuO2iPJ_M/QPIG4cPl8RzsTctoTo2p_g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+            <a href="https://www.canva.com/design/DAFuO2iPJ_M/QPIG4cPl8RzsTctoTo2p_g/view?utm_content=DAFuO2iPJ_M&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">CELL</a> by Swarna Lekah
         </div>
     </div>
 
+    <!-- JavaScript for carousels and audio -->
     <script>
-        // JavaScript for the left carousel (Carousel 1)
         const carousel1 = document.querySelector('.carousel-container:first-of-type .carousel');
         const prevBtn1 = document.getElementById('prevBtn1');
         const nextBtn1 = document.getElementById('nextBtn1');
         let currentIndex1 = 0;
         const totalItems1 = document.querySelectorAll('.carousel-container:first-of-type .carousel-item').length;
 
-        // Function to update the left carousel display
         function updateCarousel1() {
             carousel1.style.transform = `translateX(-${currentIndex1 * 100}%)`;
         }
 
-        // Event listener for previous button of left carousel
         prevBtn1.addEventListener('click', () => {
             if (currentIndex1 > 0) {
                 currentIndex1--;
@@ -202,7 +201,6 @@
             }
         });
 
-        // Event listener for next button of left carousel
         nextBtn1.addEventListener('click', () => {
             if (currentIndex1 < totalItems1 - 1) {
                 currentIndex1++;
@@ -210,19 +208,16 @@
             }
         });
 
-        // JavaScript for the right carousel (Carousel 2)
         const carousel2 = document.querySelector('.carousel-container:last-of-type .carousel');
         const prevBtn2 = document.getElementById('prevBtn2');
         const nextBtn2 = document.getElementById('nextBtn2');
         let currentIndex2 = 0;
         const totalItems2 = document.querySelectorAll('.carousel-container:last-of-type .carousel-item').length;
 
-        // Function to update the right carousel display
         function updateCarousel2() {
             carousel2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
         }
 
-        // Event listener for previous button of right carousel
         prevBtn2.addEventListener('click', () => {
             if (currentIndex2 > 0) {
                 currentIndex2--;
@@ -230,7 +225,6 @@
             }
         });
 
-        // Event listener for next button of right carousel
         nextBtn2.addEventListener('click', () => {
             if (currentIndex2 < totalItems2 - 1) {
                 currentIndex2++;
@@ -238,7 +232,6 @@
             }
         });
 
-        // JavaScript for playing audio
         const audioButton = document.getElementById('audioButton');
         const audio = document.getElementById('audio');
 
