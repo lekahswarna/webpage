@@ -32,6 +32,7 @@
         .page-container {
             display: flex;
             align-items: center;
+            flex-direction: column; /* Align items in column */
             width: 800px; /* Adjusted width to accommodate all elements */
             margin: 20px auto; /* Add margin to the page container */
             background-color: blue; /* Set blue background color for the container */
@@ -74,12 +75,24 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Style the PowerPoint container */
+        .ppt-container {
+            width: 100%; /* Take full width */
+            margin-top: 20px; /* Add some space on top */
+        }
+
+        .ppt-container iframe {
+            width: 100%; /* Take full width of the container */
+            height: 800px; /* Set a fixed height or adjust as needed */
+            border: none; /* Remove iframe border */
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Ganesan,Swarna</h1>
-        <h2 style="color: white;">be the sun you have to burn like the sun</h2>
+        <h1>Ganesan, Swarna</h1>
+        <h2 style="color: white;">Be the sun you have to burn like the sun</h2>
         <!-- Add the audio button and audio element -->
         <button class="audio-button" id="audioButton">Play Audio</button>
         <audio id="audio" src="my_audio.mp4"></audio>
@@ -140,13 +153,14 @@
             <button class="carousel-button" id="nextBtn2">Next</button>
         </div>
     </div>
-    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
-    <!-- Add this section to your HTML body where you want the box to appear -->
-<div class="ppt-container">
-    <iframe src=""https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF-uKL-QcA&#x2F;JHXaGwFdciBcKlJ7btWoeA&#x2F;view?utm_content=DAF-uKL-QcA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" width="100%" height="500px" frameborder="0"></iframe>
-</div>
 
+    <!-- Add this section to your HTML body where you want the box to appear -->
+    <div class="ppt-container">
+        <iframe src="https://www.example.com/your-ppt-presentation-url" width="100%" height="500px" frameborder="0"></iframe>
+    </div>
+
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
 
     <script>
         // JavaScript for the left carousel (Carousel 1)
@@ -220,4 +234,4 @@
         });
     </script>
 </body>
-</html>  
+</html>
